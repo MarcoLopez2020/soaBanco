@@ -1,0 +1,27 @@
+CREATE TABLE estudiantes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(50),
+  edad INT
+);
+
+
+CREATE TABLE materias (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(50),
+  estudiante_id INT,
+  FOREIGN KEY (estudiante_id) REFERENCES estudiantes(id)
+);
+
+
+INSERT INTO estudiantes (nombre, edad) VALUES
+  ('Estudiante 1', 20),
+  ('Estudiante 2', 22),
+  ('Estudiante 3', 19),
+  ('Estudiante 4', 21),
+  ('Estudiante 5', 18);
+INSERT INTO materias (nombre, estudiante_id) VALUES
+  ('Materia 1', 1),
+  ('Materia 2', 1),
+  ('Materia 3', 1),
+  ('Materia 4', 1),
+  ('Materia 5', 1);
